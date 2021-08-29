@@ -1,0 +1,16 @@
+services:
+  database:
+    image: mysql/mysql-server:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=snippetbox
+      - MYSQL_USER=snippetbox
+      - MYSQL_PASSWORD=password
+    volumes:
+      - mysql-data:/var/lib/msyql
+
+volumes:
+  mysql-data:
+    driver: local
